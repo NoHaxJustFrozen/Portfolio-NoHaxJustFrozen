@@ -32,7 +32,7 @@ const Contact = () => {
           <div className="contact-details">
             <div className="contact-item">
               <Mail size={18} />
-              <span>hello@nohaxus.dev</span>
+              <a href="mailto:mcnrylmz@gmail.com" style={{ color: 'inherit', textDecoration: 'none' }}>mcnrylmz@gmail.com</a>
             </div>
             <div className="contact-item">
               <MapPin size={18} />
