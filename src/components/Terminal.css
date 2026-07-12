@@ -1,0 +1,131 @@
+.terminal-overlay {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  width: 450px;
+  max-width: calc(100vw - 4rem);
+  height: 350px;
+  z-index: 99999; /* Highest priority */
+  pointer-events: auto;
+}
+
+.terminal-window {
+  width: 100%;
+  height: 100%;
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border-subtle);
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5);
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.terminal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  background: rgba(25, 25, 25, 0.9);
+  border-bottom: 1px solid var(--border-subtle);
+  color: var(--text-secondary);
+  font-size: 0.85rem;
+}
+
+.terminal-header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.terminal-close {
+  background: none;
+  border: none;
+  color: var(--text-secondary);
+  cursor: pointer;
+  padding: 0;
+  display: flex;
+  transition: color 0.2s;
+}
+
+.terminal-close:hover {
+  color: var(--accent);
+}
+
+.terminal-body {
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  cursor: text;
+}
+
+.terminal-body::-webkit-scrollbar {
+  width: 6px;
+}
+.terminal-body::-webkit-scrollbar-track {
+  background: transparent;
+}
+.terminal-body::-webkit-scrollbar-thumb {
+  background: var(--border-subtle);
+  border-radius: 3px;
+}
+
+.terminal-line {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  word-break: break-all;
+}
+
+.terminal-line.system {
+  color: #a9b0c0;
+}
+
+.terminal-line.command {
+  color: #fff;
+}
+
+.terminal-line.output {
+  color: var(--accent);
+}
+
+.terminal-line.error {
+  color: #ff5555;
+}
+
+.terminal-input-line {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  margin-top: 0.2rem;
+}
+
+.terminal-prompt {
+  color: #64ffda; /* A slight matrix green/cyan hint for the prompt */
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.terminal-input-line input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #fff;
+  font-family: inherit;
+  font-size: 0.9rem;
+  caret-color: var(--accent);
+}
+
+@media (max-width: 600px) {
+  .terminal-overlay {
+    width: calc(100vw - 2rem);
+    height: 300px;
+    bottom: 1rem;
+    right: 1rem;
+  }
+}

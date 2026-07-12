@@ -14,6 +14,7 @@ import Contact from './components/Contact';
 import CustomCursor from './components/CustomCursor';
 import ScrollProgress from './components/ScrollProgress';
 import Preloader from './components/Preloader';
+import Terminal from './components/Terminal';
 import './App.css';
 
 function App() {
@@ -50,6 +51,7 @@ function App() {
         <ScrollProgress />
         <VideoBackground />
         <Header />
+        <Terminal />
 
         <main className="main-content">
           <Hero isLoading={isLoading} />
