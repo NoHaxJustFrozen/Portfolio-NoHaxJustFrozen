@@ -30,6 +30,12 @@ const translations = {
     
     // Projects
     proj_title: "Selected Work",
+    proj_1_title: "LUMIRISE",
+    proj_1_tech: "Web Platform",
+    proj_2_title: "OBD TELEMETRY",
+    proj_2_tech: "Real-time Vehicle Diagnostics & Tracking",
+    proj_3_title: "TBD",
+    proj_3_tech: "Coming Soon",
     
     // About
     about_title: "About Me",
@@ -75,6 +81,12 @@ const translations = {
     
     // Projects
     proj_title: "Seçili Çalışmalar",
+    proj_1_title: "LUMIRISE",
+    proj_1_tech: "Web Platformu",
+    proj_2_title: "OBD TELEMETRİ",
+    proj_2_tech: "Gerçek Zamanlı Araç Takip & Analiz",
+    proj_3_title: "TBD",
+    proj_3_tech: "Çok Yakında",
     
     // About
     about_title: "Hakkımda",

@@ -123,3 +123,45 @@
     transform: translateX(0);
   }
 }
+
+/* Fullscreen Project Transition Overlay */
+.fullscreen-project-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--bg-primary);
+  z-index: 100000; /* above cursor and everything */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+}
+
+.fullscreen-project-title {
+  font-family: var(--font-heading);
+  font-size: clamp(3rem, 10vw, 8rem);
+  font-weight: 900;
+  letter-spacing: -4px;
+  color: var(--text-primary);
+  margin: 0;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.loading-line-bottom {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: var(--accent);
+  transform-origin: left;
+}
+
+.project-row.dimmed {
+  opacity: 0.1;
+  pointer-events: none;
+}
