@@ -33,11 +33,13 @@ const Projects = () => {
 
   const [hoveredIndex, setHoveredIndex] = useState(null);
   const [clickedProject, setClickedProject] = useState(null);
+  const [clickCoords, setClickCoords] = useState({ x: 0, y: 0 });
 
   const handleProjectClick = (e, project) => {
     e.preventDefault();
     if (project.url === "#") return;
     
+    setClickCoords({ x: e.clientX, y: e.clientY });
     setClickedProject(project);
     
     // Wait for the full-screen animation to finish (800ms) then redirect
@@ -69,7 +71,6 @@ const Projects = () => {
           <motion.a
             href={project.url}
             onClick={(e) => handleProjectClick(e, project)}
-            layoutId={`project-wrapper-${project.id}`}
             key={project.id}
             className={`project-row ${clickedProject && clickedProject.id !== project.id ? 'dimmed' : ''}`}
             onMouseEnter={() => setHoveredIndex(index)}
@@ -92,10 +93,9 @@ const Projects = () => {
       <AnimatePresence>
         {clickedProject && (
           <motion.div
-            layoutId={`project-wrapper-${clickedProject.id}`}
             className="fullscreen-project-overlay"
-            initial={{ borderRadius: "20px" }}
-            animate={{ borderRadius: "0px" }}
+            initial={{ clipPath: `circle(0px at ${clickCoords.x}px ${clickCoords.y}px)` }}
+            animate={{ clipPath: `circle(150vw at ${clickCoords.x}px ${clickCoords.y}px)` }}
             transition={{ duration: 0.8, ease: [0.76, 0, 0.24, 1] }}
           >
             <motion.h2 
