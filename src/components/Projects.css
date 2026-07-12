@@ -1,0 +1,125 @@
+.projects-section-v2 {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 6rem 2rem;
+  position: relative;
+}
+
+.projects-list {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 1100px;
+}
+
+.project-row {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2.5rem 0;
+  border-bottom: 1px solid var(--border-subtle);
+  cursor: pointer;
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  position: relative;
+  z-index: 2;
+  text-decoration: none;
+}
+
+.project-row:first-child {
+  border-top: 1px solid var(--border-subtle);
+}
+
+.project-row:hover {
+  padding-left: 2rem;
+  border-color: var(--border-hover);
+}
+
+.project-index {
+  font-size: 0.8rem;
+  color: var(--text-tertiary);
+  font-weight: 300;
+  letter-spacing: 2px;
+  min-width: 30px;
+  transition: color 0.4s ease;
+}
+
+.project-row:hover .project-index {
+  color: var(--accent);
+}
+
+.project-huge-title {
+  font-size: clamp(2.5rem, 7vw, 5.5rem);
+  font-weight: 800;
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(255, 255, 255, 0.15);
+  transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: -2px;
+  flex-grow: 1;
+}
+
+.project-row:hover .project-huge-title {
+  color: var(--text-primary);
+  -webkit-text-stroke: 0px transparent;
+}
+
+.project-hover-tech {
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: var(--text-secondary);
+  opacity: 0;
+  transform: translateX(-15px);
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  white-space: nowrap;
+}
+
+.project-row:hover .project-hover-tech {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Small elegant floating dot */
+.floating-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  z-index: 99;
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--accent);
+  mix-blend-mode: difference;
+}
+
+.floating-dot span {
+  color: var(--bg-primary);
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .floating-dot {
+    display: none;
+  }
+  .project-row:hover {
+    padding-left: 0;
+  }
+  .project-hover-tech {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

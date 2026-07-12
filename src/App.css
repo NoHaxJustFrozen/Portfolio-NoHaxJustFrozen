@@ -1,0 +1,31 @@
+.main-content {
+  position: relative;
+  z-index: var(--z-base);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* AnimatedTitle styles */
+.word-wrap {
+  display: inline-flex;
+  overflow: hidden;
+}
+
+.animated-char {
+  will-change: transform, opacity;
+}
+
+/* Lenis smooth scroll overrides */
+html.lenis, html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}

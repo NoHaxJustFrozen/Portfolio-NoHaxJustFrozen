@@ -1,0 +1,40 @@
+.marquee-section {
+  width: 100%;
+  padding: 3rem 0;
+  overflow: hidden;
+  border-top: 1px solid var(--border-subtle);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.marquee-track {
+  overflow: hidden;
+  width: 100%;
+}
+
+.marquee-inner {
+  display: flex;
+  white-space: nowrap;
+  will-change: transform;
+}
+
+.marquee-item {
+  font-family: var(--font-heading);
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  font-weight: 300;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--text-tertiary);
+  padding: 0 1rem;
+  flex-shrink: 0;
+  transition: color 0.3s ease;
+}
+
+.marquee-item:hover {
+  color: var(--accent);
+}
+
+.marquee-dot {
+  color: var(--text-tertiary);
+  margin: 0 1rem;
+  opacity: 0.3;
+}
